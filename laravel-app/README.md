@@ -60,6 +60,15 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
+---
+
+## Project Docs
+
+詳しい設計や仕様は `docs/` 配下に分割しました。
+
+- [設計書（MVP版）](docs/design-mvp.md)
+- 今後: ER図, ルーティング, API仕様 などを追加予定
+
 データベースの内容を確認する方法をいくつか紹介します。現在のプロジェクトはSQLiteを使用しているので、それに合わせた方法を説明します。
 
 ## 1. Laravel Tinkerを使用する方法（推奨）

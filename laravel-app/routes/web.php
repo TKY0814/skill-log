@@ -2,10 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB; // Added DB facade
+use App\Http\Controllers\SkillController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('skills', SkillController::class)->only(['index','create','store']);
 
 Route::get('/db-viewer', function () {
     // テーブル一覧を取得
