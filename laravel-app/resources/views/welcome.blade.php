@@ -26,6 +26,9 @@
                     <a href="/" class="text-lg font-semibold text-[#1b1b18] dark:text-[#EDEDEC]" style="color: #1b1b18 !important;">
                         Skill Log
                     </a>
+                    <a href="/skills" class="text-lg font-semibold text-[#1b1b18] dark:text-[#EDEDEC]" style="color: #1b1b18 !important;">
+                        スキル一覧
+                    </a>
                 </div>
                 <div class="flex items-center gap-4">
                     <a

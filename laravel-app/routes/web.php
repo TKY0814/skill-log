@@ -5,9 +5,10 @@ use Illuminate\Support\Facades\DB; // Added DB facade
 use App\Http\Controllers\SkillController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
-Route::resource('skills', SkillController::class)->only(['index','create','store']);
+Route::resource('skills', SkillController::class)->only(['index','create','store','show']);
+Route::post('skills/{skill}/progresses', [SkillController::class, 'storeProgress'])->name('skills.progresses.store');
 
 Route::get('/db-viewer', function () {
     // テーブル一覧を取得

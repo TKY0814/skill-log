@@ -40,7 +40,7 @@
                                 <td class="px-4 py-2 align-top font-medium text-gray-900">{{ $skill->title }}</td>
                                 <td class="px-4 py-2 align-top text-gray-700">{{ Str::limit($skill->description, 120) }}</td>
                                 <td class="px-4 py-2 text-right">
-                                    <a href="#" class="text-blue-600 hover:underline">詳細を見る</a>
+                                    <a href="{{ route('skills.show', $skill) }}" class="text-blue-600 hover:underline">詳細を見る</a>
                                 </td>
                             </tr>
                         @endforeach

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Skill;
+use App\Models\SkillProgress;
 use Illuminate\Http\Request;
 
 class SkillController extends Controller
@@ -44,7 +45,10 @@ class SkillController extends Controller
      */
     public function show(Skill $skill)
     {
-        //
+        $skill->load(['progresses' => function ($q) {
+            $q->latest('progress_date')->latest('id');
+        }]);
+        return view('skills.show', compact('skill'));
     }
 
     /**
@@ -69,5 +73,19 @@ class SkillController extends Controller
     public function destroy(Skill $skill)
     {
         //
+    }
+
+    public function storeProgress(Request $request, Skill $skill)
+    {
+        $validated = $request->validate([
+            'progress_date' => ['required', 'date'],
+            'title' => ['required', 'string', 'max:255'],
+            'content' => ['nullable', 'string'],
+        ]);
+
+        $validated['skill_id'] = $skill->id;
+        SkillProgress::create($validated);
+
+        return redirect()->route('skills.show', $skill)->with('status', '進捗を追加しました');
     }
 }
