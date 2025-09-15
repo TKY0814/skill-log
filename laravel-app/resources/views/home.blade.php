@@ -87,7 +87,7 @@
 					<div style="font-size:13px;color:var(--muted)">スキル管理アプリ。要件定義〜設計〜実装を担当。Filament 管理画面を実装。</div>
 					<div style="margin-top:8px">
 						<a href="https://github.com/yourrepo">GitHub</a>
-						<a href="#" style="margin-left:12px">Demo</a>
+						<a href="{{ route('skills.index') }}" style="margin-left:12px">アプリへ</a>
 					</div>
 				</div>
 			</div>
