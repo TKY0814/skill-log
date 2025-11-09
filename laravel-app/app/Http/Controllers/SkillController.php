@@ -88,4 +88,34 @@ class SkillController extends Controller
 
         return redirect()->route('skills.show', $skill)->with('status', '進捗を追加しました');
     }
+
+    public function updateProgress(Request $request, Skill $skill, SkillProgress $progress)
+    {
+        // 進捗がこのスキルに属しているか確認
+        if ($progress->skill_id !== $skill->id) {
+            abort(404);
+        }
+
+        $validated = $request->validate([
+            'progress_date' => ['required', 'date'],
+            'title' => ['required', 'string', 'max:255'],
+            'content' => ['nullable', 'string'],
+        ]);
+
+        $progress->update($validated);
+
+        return redirect()->route('skills.show', $skill)->with('status', '進捗を更新しました');
+    }
+
+    public function destroyProgress(Request $request, Skill $skill, SkillProgress $progress)
+    {
+        // 進捗がこのスキルに属しているか確認
+        if ($progress->skill_id !== $skill->id) {
+            abort(404);
+        }
+
+        $progress->delete();
+
+        return redirect()->route('skills.show', $skill)->with('status', '進捗を削除しました');
+    }
 }

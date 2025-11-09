@@ -9,6 +9,8 @@ Route::get('/', function () {
 });
 Route::resource('skills', SkillController::class)->only(['index','create','store','show']);
 Route::post('skills/{skill}/progresses', [SkillController::class, 'storeProgress'])->name('skills.progresses.store');
+Route::put('skills/{skill}/progresses/{progress}', [SkillController::class, 'updateProgress'])->name('skills.progresses.update');
+Route::delete('skills/{skill}/progresses/{progress}', [SkillController::class, 'destroyProgress'])->name('skills.progresses.destroy');
 
 Route::get('/db-viewer', function () {
     // テーブル一覧を取得
