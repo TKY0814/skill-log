@@ -11,9 +11,9 @@
 	<div class="container">
 		<header class="header">
 			<div class="brand">
-				<div class="logo">SL</div>
+
 				<div>
-					<div style="font-weight:600">Skill Log</div>
+					<div style="font-weight:600">鈴木 拓弥</div>
 					<div style="font-size:12px;color:var(--muted)">Portfolio</div>
 				</div>
 			</div>
@@ -86,7 +86,7 @@
 					<div style="font-weight:700">Skill Log</div>
 					<div style="font-size:13px;color:var(--muted)">スキル管理アプリ。要件定義〜設計〜実装を担当。Filament 管理画面を実装。</div>
 					<div style="margin-top:8px">
-						<a href="https://github.com/yourrepo">GitHub</a>
+						<a href="https://github.com/TKY0814/skill-log">GitHub</a>
 						<a href="{{ route('skills.index') }}" style="margin-left:12px">アプリへ</a>
 					</div>
 				</div>
@@ -96,8 +96,8 @@
 		<section id="contact" style="margin-top:20px">
 			<h3>Contact</h3>
 			<div class="card">
-				<p>メール: <a href="mailto:yourmail@example.com">yourmail@example.com</a></p>
-				<p style="margin-top:8px">SNS: <a href="https://github.com/youraccount">GitHub</a> / <a href="https://x.com/youraccount">X</a></p>
+				<p>メール: <a href="suzutaku.dev@gmail.com">suzutaku.dev@gmail.com</a></p>
+				<p style="margin-top:8px">SNS: <a href="https://github.com/TKY0814?tab=repositories">GitHub</a>
 			</div>
 		</section>
 
